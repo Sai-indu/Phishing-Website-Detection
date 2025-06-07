@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHISHING URL DETECTION </title>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo&family=Anton&display=swap" rel="stylesheet">
+  <link href="static/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="login">
+    <h1>PHISHING WEBSITE DETECTOR</h1>
+    <form method="POST" action="/predict">
+      <div class="form-row">
+        <input type="text" name="url" placeholder="Enter URL" required>
+        <button type="submit">Detect</button>
+      </div>
+    </form>
+
+    {% if prediction_text %}
+      <br><br>
+      <p class="prediction-text">{{ prediction_text }}</p>
+    {% endif %}
+  </div>
+</body>
+</html>
